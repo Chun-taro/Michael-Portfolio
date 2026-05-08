@@ -1,0 +1,68 @@
+.contact-section {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.contact-section .section-title {
+  justify-content: center;
+}
+
+.contact-section .section-title::after {
+  display: none; /* Hide the line for center alignment */
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.contact-heading {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.contact-desc {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.contact-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--accent-primary);
+  transform: translateY(-3px);
+}

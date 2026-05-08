@@ -1,0 +1,109 @@
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 2rem;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-content {
+  max-width: 600px;
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 10px;
+  background: var(--gradient-accent);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* This ensures the face (top of image) is kept in view */
+  border-radius: 50%;
+  border: 6px solid var(--bg-dark);
+  background-color: var(--bg-card); /* Placeholder background in case image isn't there yet */
+}
+
+@media (max-width: 968px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .image-wrapper {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 2rem;
+  }
+}
+
+.hero-greeting {
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.hero-name {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-role {
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 550px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-name { font-size: 3rem; }
+  .hero-role { font-size: 1.75rem; }
+  .hero-section { min-height: 70vh; }
+}

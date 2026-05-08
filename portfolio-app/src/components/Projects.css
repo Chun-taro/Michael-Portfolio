@@ -1,0 +1,67 @@
+.projects-section {
+  position: relative;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.external-link {
+  color: var(--text-muted);
+}
+
+.external-link:hover {
+  color: var(--accent-primary);
+  transform: scale(1.1);
+}
+
+.project-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.project-title a {
+  color: var(--text-main);
+}
+
+.project-title a:hover {
+  color: var(--accent-primary);
+}
+
+.project-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: var(--accent-secondary);
+}
