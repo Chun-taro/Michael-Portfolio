@@ -3,30 +3,37 @@
   margin-bottom: 5rem;
 }
 
-.contact-section .section-title {
-  justify-content: center;
-}
-
-.contact-section .section-title::after {
-  display: none; /* Hide the line for center alignment */
-}
-
 .contact-content {
   max-width: 600px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), var(--glass-shadow);
+  transition: var(--transition);
+}
+
+.contact-content:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--bg-card-hover);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
 }
 
 .contact-heading {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
   color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
 
 .contact-desc {
   color: var(--text-muted);
   font-size: 1.1rem;
   margin-bottom: 3rem;
+  line-height: 1.6;
 }
 
 .contact-info {
@@ -34,7 +41,7 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .info-item {
@@ -43,12 +50,23 @@
   gap: 1rem;
   color: var(--text-main);
   font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+
+.info-item:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  transform: scale(1.02);
 }
 
 .contact-btn {
-  padding: 1rem 2.5rem;
+  padding: 1.25rem 3rem;
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .social-links {
@@ -60,9 +78,17 @@
 .social-links a {
   color: var(--text-muted);
   transition: var(--transition);
+  display: inline-flex;
+  padding: 0.75rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
 }
 
 .social-links a:hover {
-  color: var(--accent-primary);
-  transform: translateY(-3px);
+  color: var(--text-main);
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
 }

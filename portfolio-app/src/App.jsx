@@ -11,7 +11,6 @@ function App() {
     <div className="app-wrapper">
       <header>
         <div className="container nav-content">
-          <div className="logo gradient-text">Angelo.</div>
           <nav className="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>

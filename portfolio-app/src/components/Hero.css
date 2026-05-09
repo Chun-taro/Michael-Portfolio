@@ -1,21 +1,23 @@
 .hero-section {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 640px;
   flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image {
@@ -23,32 +25,102 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .image-wrapper {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
-  padding: 10px;
-  background: var(--gradient-accent);
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+  padding: 4px; /* Thin gradient border */
+  background: var(--gradient-glow);
+  box-shadow: 0 0 80px rgba(0, 240, 255, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Subtle spinning glow effect for the border */
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: var(--gradient-glow);
+  border-radius: 50%;
+  z-index: -1;
+  animation: spin 8s linear infinite;
+  filter: blur(8px);
+  opacity: 0.8;
 }
 
 .profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* This ensures the face (top of image) is kept in view */
+  object-position: center top;
   border-radius: 50%;
-  border: 6px solid var(--bg-dark);
-  background-color: var(--bg-card); /* Placeholder background in case image isn't there yet */
+  border: 4px solid var(--bg-dark);
+  background-color: var(--bg-card);
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-greeting {
+  font-size: 0.9rem;
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-name {
+  font-size: 5rem;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-role {
+  font-size: 2.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+  max-width: 550px;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
 }
 
 @media (max-width: 968px) {
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
+    gap: 3rem;
   }
   
   .hero-content {
@@ -63,47 +135,17 @@
   }
   
   .image-wrapper {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 2rem;
+    width: 280px;
+    height: 280px;
   }
-}
-
-.hero-greeting {
-  font-size: 1.25rem;
-  color: var(--accent-primary);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-.hero-name {
-  font-size: 4.5rem;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.hero-role {
-  font-size: 2.5rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.hero-desc {
-  font-size: 1.125rem;
-  color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  max-width: 550px;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .hero-name { font-size: 3rem; }
+  
+  .hero-name { font-size: 3.5rem; }
   .hero-role { font-size: 1.75rem; }
-  .hero-section { min-height: 70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero-name { font-size: 2.75rem; }
+  .hero-role { font-size: 1.5rem; }
+  .hero-cta { flex-direction: column; width: 100%; }
+  .hero-cta .btn { width: 100%; }
 }
