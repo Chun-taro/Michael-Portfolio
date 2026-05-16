@@ -4,7 +4,7 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
-      title: "Medical Clinic System v2",
+      title: "BukSU Medical Clinic",
       description: "A comprehensive medical clinic management system built to streamline operations and patient data management.",
       tags: ["PHP", "JavaScript", "HTML", "CSS"],
       link: "https://github.com/Chun-taro/medicalclinic-system-v2",

@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+  const [isComposeOpen, setIsComposeOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    const mailtoUrl = `mailto:michaelangeloangeles0@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
+    window.location.href = mailtoUrl;
+    setIsComposeOpen(false);
+  };
+
   return (
     <section id="contact" className="contact-section">
       <div className="container">
@@ -29,17 +47,14 @@ const Contact = () => {
               </svg>
               <span>0997-792-4534</span>
             </div>
-
-            <div className="info-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>Zone 2 Cabangahan, Malaybalay City</span>
-            </div>
           </div>
           
-          <a href="mailto:michaelangeloangeles0@gmail.com" className="btn btn-primary contact-btn">Say Hello</a>
+          <button 
+            onClick={() => setIsComposeOpen(true)} 
+            className="btn btn-primary contact-btn"
+          >
+            Say Hello
+          </button>
           
           <div className="social-links">
             <a href="https://github.com/Chun-taro" target="_blank" rel="noreferrer">
@@ -50,6 +65,55 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Gmail-style Compose Modal */}
+      {isComposeOpen && (
+        <div className="gmail-modal-overlay">
+          <div className="gmail-compose-window">
+            <div className="gmail-header">
+              <span>New Message</span>
+              <div className="header-actions">
+                <button className="header-btn" onClick={() => setIsComposeOpen(false)}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+              </div>
+            </div>
+            
+            <form onSubmit={handleSend} className="gmail-body">
+              <div className="gmail-input-group">
+                <span className="input-label">To</span>
+                <input type="text" value="michaelangeloangeles0@gmail.com" readOnly />
+              </div>
+              <div className="gmail-input-group">
+                <input 
+                  type="text" 
+                  name="subject"
+                  placeholder="Subject" 
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="gmail-message-area">
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              
+              <div className="gmail-footer">
+                <button type="submit" className="gmail-send-btn">Send</button>
+                <div className="gmail-formatting-icons">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2"><path d="M6 12h12M6 8h12M6 16h12"/></svg>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
