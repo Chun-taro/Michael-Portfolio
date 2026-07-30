@@ -4,6 +4,13 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
+      title: "House of A Pickleball Court",
+      description: "A full-stack sports center & court booking system featuring online reservations, schedule management, user authentication, and responsive UI.",
+      tags: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
+      link: "https://github.com/Chun-taro/House-of-A-Pickleball-Court",
+      liveLink: "https://house-of-a-pickleball-court.vercel.app/"
+    },
+    {
       title: "BukSU Medical Clinic",
       description: "A comprehensive medical clinic management system built to streamline operations and patient data management.",
       tags: ["PHP", "JavaScript", "HTML", "CSS"],

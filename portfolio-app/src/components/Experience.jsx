@@ -8,7 +8,7 @@ const Experience = () => {
       company: "Academic & Personal Projects",
       period: "2023 - Present",
       description: [
-        "Architected and developed full-stack web applications using the MERN stack and Laravel, including a comprehensive BukSU Medical Clinic and a Research Tracker.",
+        "Architected and developed full-stack web applications using the MERN stack and Laravel, including House of A Pickleball Court booking system, BukSU Medical Clinic, and a Research Tracker.",
         "Built an AI-based Camera Detection System utilizing Python and Computer Vision to monitor Multicab yellow box zones.",
         "Designed database schemas and implemented scalable frontend and backend architectures."
       ]
