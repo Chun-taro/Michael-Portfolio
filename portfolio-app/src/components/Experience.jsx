@@ -22,16 +22,6 @@ const Experience = () => {
         "Provided technical support for hardware and software issues.",
         "Ensured the smooth operation of computer lab facilities."
       ]
-    },
-    {
-      title: "Construction Laborer",
-      company: "RFB - Laguitas Sports Complex",
-      period: "Past",
-      description: [
-        "Performed general labor tasks in construction projects.",
-        "Supported the team in site preparation and material handling.",
-        "Developed a strong work ethic and the ability to handle physically demanding situations."
-      ]
     }
   ];
 
