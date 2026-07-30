@@ -226,19 +226,28 @@
   transition: background 0.2s;
 }
 
-.gmail-send-btn:hover {
-  background: #1b66c9;
-  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+.gmail-send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.gmail-formatting-icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
+.gmail-status-banner {
+  padding: 8px 15px;
+  font-size: 13px;
+  border-radius: 4px;
+  margin: 0 15px 10px 15px;
+  text-align: center;
+  font-weight: 500;
 }
 
-.gmail-formatting-icons svg {
-  cursor: pointer;
+.gmail-status-banner.success {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.gmail-status-banner.error {
+  background: #fce8e6;
+  color: #c5221f;
 }
 
 @media (max-width: 600px) {

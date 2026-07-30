@@ -4,21 +4,54 @@ import './Contact.css';
 const Contact = () => {
   const [isComposeOpen, setIsComposeOpen] = useState(false);
   const [formData, setFormData] = useState({
+    senderEmail: '',
     subject: '',
     message: ''
   });
+  const [isSending, setIsSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=michaelangeloangeles0@gmail.com&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
-    window.open(gmailUrl, '_blank');
-    setFormData({ subject: '', message: '' });
-    setIsComposeOpen(false);
+    setIsSending(true);
+    setStatusMessage(null);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/michaelangeloangeles0@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `Portfolio Contact: ${formData.subject}`,
+          from_email: formData.senderEmail,
+          subject: formData.subject,
+          message: formData.message,
+          _captcha: 'false'
+        })
+      });
+
+      if (response.ok) {
+        setStatusMessage({ type: 'success', text: '✓ Message sent successfully!' });
+        setFormData({ senderEmail: '', subject: '', message: '' });
+        setTimeout(() => {
+          setIsComposeOpen(false);
+          setStatusMessage(null);
+        }, 2200);
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (err) {
+      setStatusMessage({ type: 'error', text: 'Could not send message. Please try again.' });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -51,7 +84,10 @@ const Contact = () => {
           </div>
           
           <button 
-            onClick={() => setIsComposeOpen(true)} 
+            onClick={() => {
+              setIsComposeOpen(true);
+              setStatusMessage(null);
+            }} 
             className="btn btn-primary contact-btn"
           >
             Say Hello
@@ -91,6 +127,17 @@ const Contact = () => {
                 <input type="text" value="michaelangeloangeles0@gmail.com" readOnly />
               </div>
               <div className="gmail-input-group">
+                <span className="input-label">From</span>
+                <input 
+                  type="email" 
+                  name="senderEmail"
+                  placeholder="Your Email Address" 
+                  value={formData.senderEmail}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="gmail-input-group">
                 <input 
                   type="text" 
                   name="subject"
@@ -103,18 +150,23 @@ const Contact = () => {
               <div className="gmail-message-area">
                 <textarea 
                   name="message"
+                  placeholder="Type your message here..."
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                 />
               </div>
+
+              {statusMessage && (
+                <div className={`gmail-status-banner ${statusMessage.type}`}>
+                  {statusMessage.text}
+                </div>
+              )}
               
               <div className="gmail-footer">
-                <button type="submit" className="gmail-send-btn">Send</button>
-                <div className="gmail-formatting-icons">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" strokeWidth="2"><path d="M6 12h12M6 8h12M6 16h12"/></svg>
-                </div>
+                <button type="submit" className="gmail-send-btn" disabled={isSending}>
+                  {isSending ? 'Sending...' : 'Send'}
+                </button>
               </div>
             </form>
           </div>
