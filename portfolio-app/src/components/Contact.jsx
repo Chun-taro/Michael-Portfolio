@@ -15,8 +15,9 @@ const Contact = () => {
 
   const handleSend = (e) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:michaelangeloangeles0@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
-    window.location.href = mailtoUrl;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=michaelangeloangeles0@gmail.com&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
+    window.open(gmailUrl, '_blank');
+    setFormData({ subject: '', message: '' });
     setIsComposeOpen(false);
   };
 
