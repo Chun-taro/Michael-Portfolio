@@ -22,6 +22,16 @@ const Experience = () => {
         "Provided technical support for hardware and software issues.",
         "Ensured the smooth operation of computer lab facilities."
       ]
+    },
+    {
+      title: "Hardware Maintenance Technician",
+      company: "Technical & Computer Support",
+      period: "2023 - Present",
+      description: [
+        "Performed computer hardware diagnostics, troubleshooting, assembly, and component upgrades.",
+        "Maintained workstations, peripheral devices, and system hardware infrastructure.",
+        "Executed routine preventive maintenance, hardware installation, and system repairs."
+      ]
     }
   ];
 
