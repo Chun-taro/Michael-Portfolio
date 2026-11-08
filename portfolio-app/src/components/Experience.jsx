@@ -10,7 +10,7 @@ const Experience = () => {
       badge: "Software Engineering",
       description: [
         "Architected and developed full-stack web applications using the MERN stack, including Dine Multi-Tenancy SaaS Platform, House of A Pickleball Court booking system, and the BukSU Medical Clinic ecosystem.",
-        "Engineered an AI-based Camera Detection System utilizing Python and Computer Vision to monitor Multicab yellow box zones.",
+        "Engineered the AI-Powered Yellow Box Zone Violation Monitoring System using Python and Computer Vision to detect Multicab stop-time and junction violations in real time.",
         "Designed scalable database schemas, RESTful APIs, and responsive mobile-first user interfaces."
       ]
     },

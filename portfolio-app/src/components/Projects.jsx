@@ -53,11 +53,11 @@ const Projects = () => {
       image: nationalBlackGuideImg
     },
     {
-      title: "Multicab Yellow Box Zone Monitoring",
+      title: "AI-Powered Yellow Box Zone Violation Monitoring System",
       category: "AI & Computer Vision",
-      description: "An innovative AI-based camera detection system utilizing Python and Computer Vision to monitor yellow box zones and enhance road regulation enforcement.",
-      tags: ["AI", "Computer Vision", "Python", "OpenCV"],
-      link: "https://github.com/Chun-taro/Multicab-Yellow-Box-Zone-Monitoring-System-Using-AI-based-Camera-Detection-V2"
+      description: "An intelligent computer vision system utilizing Python and OpenCV to detect Multicab stop-time and yellow box zone violations, automating traffic enforcement in real time.",
+      tags: ["Python", "Computer Vision", "AI", "OpenCV", "Traffic Monitoring"],
+      link: "https://github.com/Chun-taro/AI-Powered-Yellow-Box-Zone-Violation-Monitoring-System"
     },
     {
       title: "Research Tracker",
