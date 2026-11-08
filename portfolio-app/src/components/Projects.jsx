@@ -71,7 +71,13 @@ const Projects = () => {
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-        <h2 className="section-title"><span className="gradient-text">03.</span> Featured Projects</h2>
+        <div className="section-header-block">
+          <div className="section-eyebrow">03 / Portfolio</div>
+          <h2 className="section-title">Featured Projects</h2>
+          <p className="section-subtitle">
+            A curated collection of SaaS platforms, healthcare systems, and web applications I've architected and developed.
+          </p>
+        </div>
         
         <div className="projects-grid">
           {projects.map((project, index) => {

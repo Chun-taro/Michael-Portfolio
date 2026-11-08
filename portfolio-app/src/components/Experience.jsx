@@ -6,31 +6,34 @@ const Experience = () => {
     {
       title: "Independent Software Developer",
       company: "Academic & Personal Projects",
-      period: "2023 - Present",
+      period: "2023 — Present",
+      badge: "Software Engineering",
       description: [
-        "Architected and developed full-stack web applications using the MERN stack and Laravel, including Dine Multi-Tenancy SaaS Platform, House of A Pickleball Court booking system, and BukSU Medical Clinic ecosystem.",
-        "Built an AI-based Camera Detection System utilizing Python and Computer Vision to monitor Multicab yellow box zones.",
-        "Designed database schemas and implemented scalable frontend and backend architectures."
+        "Architected and developed full-stack web applications using the MERN stack, including Dine Multi-Tenancy SaaS Platform, House of A Pickleball Court booking system, and the BukSU Medical Clinic ecosystem.",
+        "Engineered an AI-based Camera Detection System utilizing Python and Computer Vision to monitor Multicab yellow box zones.",
+        "Designed scalable database schemas, RESTful APIs, and responsive mobile-first user interfaces."
       ]
     },
     {
       title: "Student Assistant",
-      company: "ICT Services Unit - Bukidnon State University",
+      company: "ICT Services Unit — Bukidnon State University",
       period: "Present",
+      badge: "Campus Support",
       description: [
-        "Assisted students and staff in the computer laboratory.",
-        "Provided technical support for hardware and software issues.",
-        "Ensured the smooth operation of computer lab facilities."
+        "Assisted university students, faculty, and administrative staff across computer laboratories and campus facilities.",
+        "Provided rapid front-line technical support for software installations, networking issues, and workstation setups.",
+        "Ensured consistent uptime and smooth daily operations of campus IT infrastructure."
       ]
     },
     {
       title: "Hardware Maintenance Technician",
       company: "Technical & Computer Support",
-      period: "2023 - Present",
+      period: "2023 — Present",
+      badge: "Systems & Infrastructure",
       description: [
-        "Performed computer hardware diagnostics, troubleshooting, assembly, and component upgrades.",
-        "Maintained workstations, peripheral devices, and system hardware infrastructure.",
-        "Executed routine preventive maintenance, hardware installation, and system repairs."
+        "Performed computer hardware diagnostics, troubleshooting, custom PC assembly, and component upgrades.",
+        "Maintained desktop workstations, peripherals, thermal solutions, and power delivery components.",
+        "Executed routine preventive maintenance and hardware recovery procedures."
       ]
     }
   ];
@@ -38,7 +41,13 @@ const Experience = () => {
   return (
     <section id="experience" className="experience-section">
       <div className="container">
-        <h2 className="section-title"><span className="gradient-text">02.</span> Experience</h2>
+        <div className="section-header-block">
+          <div className="section-eyebrow">02 / Experience</div>
+          <h2 className="section-title">Experience & Roles</h2>
+          <p className="section-subtitle">
+            A track record of software development, university technical assistance, and hardware infrastructure support.
+          </p>
+        </div>
         
         <div className="timeline">
           {experiences.map((exp, index) => (
@@ -46,11 +55,15 @@ const Experience = () => {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <h3>{exp.title}</h3>
+                  <div>
+                    <span className="timeline-badge">{exp.badge}</span>
+                    <h3 className="timeline-title">{exp.title}</h3>
+                    <h4 className="timeline-company">{exp.company}</h4>
+                  </div>
                   <span className="timeline-period">{exp.period}</span>
                 </div>
-                <h4 className="timeline-company">{exp.company}</h4>
-                <ul>
+                
+                <ul className="timeline-bullets">
                   {exp.description.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}

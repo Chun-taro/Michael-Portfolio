@@ -4,84 +4,134 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 2rem;
+  align-items: start;
 }
 
-.about-content {
+.about-card, .skills-card {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.about-content p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  line-height: 1.8;
-}
-
-.education h3, .skills-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-main);
-  font-weight: 600;
+.card-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
   letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
 }
 
-.education ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.education li {
-  color: var(--text-muted);
+.bio-block p {
   font-size: 1rem;
-  position: relative;
-  padding-left: 1.5rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
 }
 
-.education li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: var(--accent-primary);
+.bio-block p:last-child {
+  margin-bottom: 0;
 }
 
-.education li strong {
+.bio-block strong {
   color: var(--text-main);
   font-weight: 600;
-  font-size: 1.1rem;
-  display: block;
-  margin-bottom: 0.25rem;
 }
 
-.skills-list {
+/* Education Cards */
+.education-cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.skill-item {
-  background: rgba(0, 240, 255, 0.05);
-  color: var(--accent-primary);
-  padding: 0.6rem 1.2rem;
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: 1px solid rgba(0, 240, 255, 0.15);
+.edu-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
   transition: var(--transition);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-.skill-item:hover {
-  background: rgba(0, 240, 255, 0.15);
+.edu-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.edu-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  padding-top: 0.2rem;
+}
+
+.edu-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-degree {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.edu-school {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* Skills Column */
+.skills-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.skill-group-title {
+  font-size: 0.82rem;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-pill {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  transition: var(--transition);
+}
+
+.skill-pill:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--accent-primary);
   transform: translateY(-2px);
-  border-color: rgba(0, 240, 255, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 240, 255, 0.2);
 }
 
 @media (max-width: 900px) {

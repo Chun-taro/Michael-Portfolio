@@ -1,71 +1,169 @@
-/* Component specific styles can go here or we can just use inline styles / index.css */
 .app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-header {
-  padding: 1.5rem 0;
+/* Floating minimalist navbar */
+.site-header {
   position: fixed;
+  top: 1.25rem;
+  left: 0;
   width: 100%;
-  top: 0;
-  z-index: 50;
+  z-index: 100;
   display: flex;
   justify-content: center;
-  pointer-events: none; /* Let clicks pass through header area */
+  pointer-events: none;
+  padding: 0 1rem;
 }
 
-.nav-content {
+.nav-container {
+  pointer-events: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: rgba(10, 10, 10, 0.7);
+  gap: 2rem;
+  background: rgba(14, 14, 18, 0.75);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
-  width: fit-content;
-  pointer-events: auto; /* Re-enable clicks for the nav pill */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 0.75rem 0.5rem 1.25rem;
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
+}
+
+.nav-container:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.brand-monogram {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.brand-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-emerald);
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .nav-links a {
   color: var(--text-muted);
+  font-size: 0.88rem;
   font-weight: 500;
-  font-size: 0.9rem;
   transition: var(--transition);
+  position: relative;
+  padding: 0.25rem 0;
 }
 
 .nav-links a:hover {
-  color: var(--text-main);
+  color: #ffffff;
 }
 
-footer {
-  text-align: center;
-  padding: 3rem 0;
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  font-size: 0.84rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.nav-cta-btn:hover {
+  background: #ffffff;
+  color: #09090b;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Minimalist Footer */
+.site-footer {
+  padding: 3.5rem 0;
   border-top: 1px solid var(--glass-border);
   margin-top: auto;
   color: var(--text-dim);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
-@media (max-width: 768px) {
-  .nav-content {
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem;
-    justify-content: space-around;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+}
+
+.footer-name {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.footer-divider {
+  color: var(--text-dim);
+}
+
+.footer-right {
+  color: var(--text-dim);
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    top: 0.75rem;
   }
-  .nav-links {
-    gap: 1rem;
+  
+  .nav-container {
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.4rem 0.6rem 0.4rem 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.85rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+  
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
   }
 }
