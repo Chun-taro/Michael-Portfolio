@@ -1,0 +1,11 @@
+{
+  "name": "angelo-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm run dev --prefix portfolio-app",
+    "build": "npm run build --prefix portfolio-app",
+    "preview": "npm run preview --prefix portfolio-app"
+  }
+}
+
