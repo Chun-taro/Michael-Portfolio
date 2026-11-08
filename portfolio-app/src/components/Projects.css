@@ -24,7 +24,7 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: var(--glass-border-highlight);
   background: var(--bg-card-hover);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
 }
@@ -45,7 +45,7 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #09090b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .project-image-link.non-clickable {
@@ -68,8 +68,8 @@
 .project-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(9, 9, 11, 0.85) 100%);
-  opacity: 0.85;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 30%, rgba(9, 9, 11, 0.9) 100%);
+  opacity: 0.9;
   transition: opacity 0.3s ease;
   display: flex;
   align-items: flex-end;
@@ -83,15 +83,15 @@
 
 .overlay-badge {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.74rem;
-  font-weight: 500;
-  padding: 0.35rem 0.75rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
   border-radius: 9999px;
-  background: rgba(18, 18, 23, 0.85);
+  background: rgba(18, 18, 23, 0.92);
   color: #ffffff;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   transition: var(--transition);
 }
 
@@ -125,15 +125,15 @@
 
 .project-category {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-size: 0.74rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--accent-primary);
-  background: rgba(56, 189, 248, 0.08);
-  padding: 0.25rem 0.65rem;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 0.3rem 0.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
 .folder-icon svg {
@@ -151,13 +151,15 @@
   transition: var(--transition);
   display: flex;
   align-items: center;
-  padding: 0.25rem;
+  padding: 0.35rem;
   border-radius: 6px;
 }
 
-.external-link:hover {
+.external-link:hover,
+.external-link:focus-visible {
   color: #ffffff;
   transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .live-indicator {
@@ -169,19 +171,19 @@
   position: absolute;
   top: 1px;
   right: 1px;
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background-color: var(--accent-emerald);
   border-radius: 50%;
   box-shadow: 0 0 8px var(--accent-emerald);
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .project-title a {
@@ -191,13 +193,15 @@
 
 .project-title a:hover {
   color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .project-description {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   margin-bottom: 1.4rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Card Footer */
@@ -210,27 +214,29 @@
   gap: 1.1rem;
 }
 
+/* High Contrast Tags for WCAG Compliance */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .project-tags span {
-  color: var(--text-dim);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.25rem 0.65rem;
+  color: #f4f4f5;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   transition: var(--transition);
 }
 
 .project-card:hover .project-tags span {
-  color: var(--text-muted);
-  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* Live CTA Button */
@@ -244,23 +250,24 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  padding: 0.65rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   transition: var(--transition);
   text-decoration: none;
 }
 
-.project-live-btn:hover {
+.project-live-btn:hover,
+.project-live-btn:focus-visible {
   background: #ffffff;
   color: #09090b;
   border-color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
 }
 
 .project-live-btn svg {

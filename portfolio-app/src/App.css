@@ -22,18 +22,18 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  background: rgba(14, 14, 18, 0.75);
+  background: rgba(14, 14, 18, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 9999px;
   padding: 0.5rem 0.75rem 0.5rem 1.25rem;
-  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition: var(--transition);
 }
 
 .nav-container:hover {
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 .nav-brand {
@@ -54,8 +54,8 @@
 }
 
 .brand-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background-color: var(--accent-emerald);
   border-radius: 50%;
   box-shadow: 0 0 8px var(--accent-emerald);
@@ -69,31 +69,33 @@
 
 .nav-links a {
   color: var(--text-muted);
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   transition: var(--transition);
   position: relative;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0.2rem;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
   color: #ffffff;
 }
 
 .nav-cta-btn {
   display: inline-flex;
   align-items: center;
-  padding: 0.45rem 1.1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-main);
-  font-size: 0.84rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.86rem;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
 }
 
-.nav-cta-btn:hover {
+.nav-cta-btn:hover,
+.nav-cta-btn:focus-visible {
   background: #ffffff;
   color: #09090b;
   border-color: #ffffff;
@@ -106,7 +108,7 @@
   border-top: 1px solid var(--glass-border);
   margin-top: auto;
   color: var(--text-dim);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
 .footer-content {
@@ -125,7 +127,7 @@
 }
 
 .footer-name {
-  color: var(--text-main);
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -154,7 +156,7 @@
   }
   
   .nav-links a {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
   }
   
   .nav-cta-btn {

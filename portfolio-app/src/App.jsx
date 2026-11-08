@@ -9,14 +9,19 @@ import Contact from './components/Contact';
 function App() {
   return (
     <div className="app-wrapper">
-      <header className="site-header">
+      {/* WCAG Skip to Main Content Link for Keyboard and Screen Reader users */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
+      <header className="site-header" role="banner">
         <div className="nav-container">
-          <a href="#hero" className="nav-brand" title="Home">
+          <a href="#hero" className="nav-brand" aria-label="Home - Michael Angelo Angeles">
             <span className="brand-monogram">MA</span>
-            <span className="brand-dot" title="Available for projects"></span>
+            <span className="brand-dot" aria-label="Available for projects"></span>
           </a>
 
-          <nav className="nav-links">
+          <nav className="nav-links" aria-label="Main Navigation">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
@@ -29,7 +34,7 @@ function App() {
         </div>
       </header>
 
-      <main>
+      <main id="main-content" role="main">
         <Hero />
         <About />
         <Experience />
@@ -37,11 +42,11 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="site-footer">
+      <footer className="site-footer" role="contentinfo">
         <div className="container footer-content">
           <div className="footer-left">
             <span className="footer-name">Michael Angelo Angeles</span>
-            <span className="footer-divider">•</span>
+            <span className="footer-divider" aria-hidden="true">•</span>
             <span className="footer-role">IT Student & Developer</span>
           </div>
           <div className="footer-right">
