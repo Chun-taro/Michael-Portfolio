@@ -33,7 +33,7 @@ const About = () => {
             <div className="bio-block">
               <h3 className="card-heading">My Journey</h3>
               <p>
-                I am an IT student at <strong>Bukidnon State University</strong>, graduating in 2026. 
+                I am an IT student at <strong>Bukidnon State University</strong>, graduating in 2026 – 2027. 
                 My path into software development started with a unique foundation—I completed the TVL Cookery Track 
                 at Malaybalay City National Science High School. That experience instilled in me rigorous discipline, 
                 preparation, and the calm mindset required to deliver under pressure.
@@ -48,7 +48,7 @@ const About = () => {
               <h3 className="card-heading">Education</h3>
               <div className="education-cards">
                 <div className="edu-card">
-                  <div className="edu-year">2022 — 2026</div>
+                  <div className="edu-year">2022 — 2026 / 2027</div>
                   <div className="edu-details">
                     <h4 className="edu-degree">Bachelor of Science in Information Technology</h4>
                     <p className="edu-school">Bukidnon State University</p>

@@ -46,7 +46,7 @@ const Hero = () => {
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-value">2026</span>
+              <span className="stat-value">2026-27</span>
               <span className="stat-label">BSIT Graduate</span>
             </div>
             <div className="stat-divider"></div>
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
             <div className="profile-card-footer">
               <span className="profile-tag">BSIT Student Developer</span>
-              <span className="profile-location">BukSU • 2026</span>
+              <span className="profile-location">BukSU • 2026 - 2027</span>
             </div>
           </div>
         </div>
