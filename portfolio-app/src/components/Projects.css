@@ -44,8 +44,8 @@
   height: 200px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #09090b;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #18181f;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .project-image-link.non-clickable {
@@ -68,8 +68,9 @@
 .project-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 30%, rgba(9, 9, 11, 0.9) 100%);
-  opacity: 0.9;
+  /* Lightened gradient so the project screenshots remain bright and clear */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(9, 9, 11, 0.5) 100%);
+  opacity: 0.5;
   transition: opacity 0.3s ease;
   display: flex;
   align-items: flex-end;
@@ -78,7 +79,7 @@
 }
 
 .project-card:hover .project-image-overlay {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .overlay-badge {
